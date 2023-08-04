@@ -32,7 +32,7 @@ public class SegmentParser
     private Stack<String> path;
 
     public SegmentParser(Reader reader){
-        this.reader = new PushbackReader(reader,3);
+        this.reader = new PushbackReader(reader,6);
         this.path = new Stack<>();
     }
 
@@ -89,7 +89,7 @@ public class SegmentParser
                 break;
         }
 
-        CharBuffer buffer = CharBuffer.allocate(10);
+        CharBuffer buffer = CharBuffer.allocate(12);
 
         //之后的Token
         int len = ReaderStream.of(reader)

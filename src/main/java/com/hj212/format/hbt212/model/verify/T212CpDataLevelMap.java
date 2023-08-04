@@ -21,19 +21,19 @@ import com.hj212.format.hbt212.model.verify.groups.VersionGroup;
 @FieldValidDate(field = "QN",
         value = @ValidDate(format = "yyyyMMddHHmmssSSS"))
 @FieldC(field = "ST",
-        value = @C(len = 2))
+        value = @C(len = 5))
 @FieldC(field = "CN",
-        value = @C(len = 4))
+        value = @C(len = 7))
 @FieldC(field = "PW",
-        value = @C(len = 6))
+        value = @C(len = 9))
 @FieldC(field = "MN",
-        value = @C(len = 14))
+        value = @C(len = 27))
 @FieldN(field = "Flag",
-        value = @N(integer = 3))
+        value = @N(integer = 8))
 @FieldN(field = "PNUM", groups = ModeGroup.UseSubPacket.class,
-        value = @N(integer = 4, optional = false))
+        value = @N(integer = 9, optional = false))
 @FieldN(field = "PNO", groups = ModeGroup.UseSubPacket.class,
-        value = @N(integer = 4, optional = false))
+        value = @N(integer = 8, optional = false))
 public class T212CpDataLevelMap
         extends T212Map<String,Object> {
 
@@ -57,12 +57,12 @@ public class T212CpDataLevelMap
             value = @N(integer = 3))
     @FieldN(field = "ExeRtn",
             value = @N(integer = 3))
-    @FieldN(field = "RtdInterval", groups = VersionGroup.V2005.class,
+    @FieldN(field = "RtdInterval", groups = VersionGroup.V2017.class,
             value = @N(integer = 4))
     @FieldN(field = "RtdInterval", groups = VersionGroup.V2017.class,
             value = @N(integer = 4, min = 30, max = 3600))
 
-    @FieldValidDate(field = "QN", groups = VersionGroup.V2005.class,
+    @FieldValidDate(field = "QN", groups = VersionGroup.V2017.class,
             value = @ValidDate(format = "yyyyMMddHHmmssSSS"))
 
     @FieldN(field = "MinInterval", groups = VersionGroup.V2017.class,
@@ -75,29 +75,29 @@ public class T212CpDataLevelMap
     @FieldC(field = ".*-Flag", regex = true,
             value = @C(len = 1))
 
-    @FieldN(field = ".*-Rtd", regex = true, groups = VersionGroup.V2005.class,
+    @FieldN(field = ".*-Rtd", regex = true, groups = VersionGroup.V2017.class,
             value = @N(integer = 14, fraction = 2))
-    @FieldN(field = ".*-Min", regex = true, groups = VersionGroup.V2005.class,
+    @FieldN(field = ".*-Min", regex = true, groups = VersionGroup.V2017.class,
             value = @N(integer = 14, fraction = 2))
-    @FieldN(field = ".*-Avg", regex = true, groups = VersionGroup.V2005.class,
+    @FieldN(field = ".*-Avg", regex = true, groups = VersionGroup.V2017.class,
             value = @N(integer = 14, fraction = 2))
-    @FieldN(field = ".*-Max", regex = true, groups = VersionGroup.V2005.class,
+    @FieldN(field = ".*-Max", regex = true, groups = VersionGroup.V2017.class,
             value = @N(integer = 14, fraction = 2))
-    @FieldN(field = ".*-ZsRtd", regex = true, groups = VersionGroup.V2005.class,
+    @FieldN(field = ".*-ZsRtd", regex = true, groups = VersionGroup.V2017.class,
             value = @N(integer = 14, fraction = 2))
-    @FieldN(field = ".*-ZsMin", regex = true, groups = VersionGroup.V2005.class,
+    @FieldN(field = ".*-ZsMin", regex = true, groups = VersionGroup.V2017.class,
             value = @N(integer = 14, fraction = 2))
-    @FieldN(field = ".*-ZsAvg", regex = true, groups = VersionGroup.V2005.class,
+    @FieldN(field = ".*-ZsAvg", regex = true, groups = VersionGroup.V2017.class,
             value = @N(integer = 14, fraction = 2))
-    @FieldN(field = ".*-ZsMax", regex = true, groups = VersionGroup.V2005.class,
+    @FieldN(field = ".*-ZsMax", regex = true, groups = VersionGroup.V2017.class,
             value = @N(integer = 14, fraction = 2))
-    @FieldN(field = ".*-Cou", regex = true, groups = VersionGroup.V2005.class,
+    @FieldN(field = ".*-Cou", regex = true, groups = VersionGroup.V2017.class,
             value = @N(integer = 14, fraction = 2))
-    @FieldN(field = ".*-Ala", regex = true, groups = VersionGroup.V2005.class,
+    @FieldN(field = ".*-Ala", regex = true, groups = VersionGroup.V2017.class,
             value = @N(integer = 14, fraction = 2))
-    @FieldN(field = ".*-UpValue", regex = true, groups = VersionGroup.V2005.class,
+    @FieldN(field = ".*-UpValue", regex = true, groups = VersionGroup.V2017.class,
             value = @N(integer = 14, fraction = 2))
-    @FieldN(field = ".*-LowValue", regex = true, groups = VersionGroup.V2005.class,
+    @FieldN(field = ".*-LowValue", regex = true, groups = VersionGroup.V2017.class,
             value = @N(integer = 14, fraction = 2))
 
     @FieldValidDate(field = ".*-SampleTime", regex = true, groups = VersionGroup.V2017.class,
